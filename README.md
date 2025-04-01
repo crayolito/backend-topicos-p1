@@ -14,7 +14,7 @@
 4. **Iniciar el servidor**
    python app.py
 
-   Si necesitas defender tu código desde cero, aquí tienes una explicación completa:
+Si necesitas defender tu código desde cero, aquí tienes una explicación completa:
 
 "En este proyecto, desarrollé un sistema inteligente para clasificar consultas legales de tránsito usando técnicas de procesamiento de lenguaje natural. El componente central es el `VerificadorContexto`, que determina si una consulta está relacionada con el derecho de tránsito boliviano.
 
