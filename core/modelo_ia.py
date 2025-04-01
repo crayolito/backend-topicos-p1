@@ -336,38 +336,47 @@ class AsistenteJuridico:
             
             # Instrucciones para respuesta en dos niveles: amigo rápido + legal profundo
             prompt = f"""
-            CONTEXTO: Eres un abogado boliviano experto en tránsito de Santa Cruz, actuando como AMIGO LEGAL del conductor.
-
-            FORMATO DE RESPUESTA JSON:
-            {{
-                "respuestaAmigo": "Consejo rápido y práctico en un solo párrafo sobre qué hacer, qué decir y cómo actuar para evitar problemas de corrupción y estar informado si el caso escala",
-                
-                "accionesInmediatas": [
-                    "Primera acción concreta que debe realizar el cliente inmediatamente",
-                    "Segunda acción prioritaria basada en el análisis del caso",
-                    "Tercera acción recomendada según la situación específica"
-                ],
-                
-                "análisisLegal": "Análisis jurídico completo con citas específicas de normativas aplicables al caso concreto",
-                
-                "artículosAplicables": [
-                    "Artículo X: Texto legal resumido y explicación de cómo se aplica específicamente a este caso",
-                    "Artículo Y: Disposición legal relevante y su interpretación favorable para el cliente"
-                ],
-                
-                "derechosFundamentales": [
-                    "Primer derecho: Base constitucional o legal y cómo invocarlo correctamente durante el proceso",
-                    "Segundo derecho: Fundamento jurídico que protege al cliente y cómo utilizarlo en su defensa"
-                ],
-                
-                "defensaLegal": "Estrategia de defensa formal detallada en caso de proceso administrativo o judicial",
-                
-                "antiCorrupción": "Métodos específicos para identificar, evitar y denunciar intentos de soborno o abusos por parte de autoridades"
-            }}
-
-            PREGUNTA DEL CLIENTE: {pregunta}
-            """
-            
+                            CONTEXTO: Eres un abogado boliviano experto en tránsito de Santa Cruz, actuando como AMIGO LEGAL del conductor.
+                            
+                            FORMATO DE RESPUESTA JSON:
+                            {{
+                                "respuestaAmigo": "CONSEJO PRÁCTICO COMPLETO EN UN SOLO PÁRRAFO: Análisis directo sobre la situación legal del conductor, en tono amigable pero profesional. Incluye consejos sobre qué decir, cómo comportarse, qué documentación reunir, si debe grabar el encuentro (audio/video), qué derechos invocar, y cómo actuar ante un posible caso de corrupción. Adaptado específicamente al caso y considerando si el conductor es culpable o inocente.",
+                                
+                                "accionesInmediatas": [
+                                    "Acción inmediata específica con pasos detallados",
+                                    "Segunda acción prioritaria que debe realizar", 
+                                    "Tercera acción recomendada con justificación legal"
+                                ],
+                                
+                                "análisisLegal": "Análisis jurídico técnico y detallado con referencias a normativas bolivianas específicas aplicables al caso. Incluye fundamentos legales, posibles defensas y consecuencias según el código de tránsito.",
+                                
+                                "articulosAplicables": [
+                                    "Artículo específico del código de tránsito boliviano: texto exacto y explicación de cómo se aplica al caso",
+                                    "Segundo artículo relevante: disposición legal precisa y su interpretación favorable para el conductor"
+                                ],
+                                
+                                "derechosFundamentales": [
+                                    "Derecho específico: base legal y forma correcta de invocarlo ante las autoridades",
+                                    "Segundo derecho fundamental: cómo debe ser respetado y qué hacer si es vulnerado"
+                                ],
+                                
+                                "defensaLegal": "Estrategia jurídica específica considerando si el conductor es culpable o no. Incluye argumentos técnicos, precedentes favorables y tácticas procesales para minimizar consecuencias.",
+                                
+                                "antiCorrupción": "Métodos prácticos para identificar intentos de soborno, cómo documentarlos (grabaciones, testigos), a qué entidades denunciar y procedimiento específico para hacerlo sin exponerse a represalias."
+                            }}
+                            
+                            PREGUNTA DEL CLIENTE: {pregunta}
+                            
+                            INSTRUCCIONES ADICIONALES:
+                            - Analiza si el conductor es CULPABLE o INOCENTE según la pregunta
+                            - Ofrece consejos prácticos sobre cómo usar tecnología (grabaciones, fotos) como evidencia
+                            - Enfatiza la importancia de mantener RESPETO hacia las autoridades
+                            - Indica claramente QUÉ DECIR y QUÉ NO DECIR ante un oficial
+                            - Explica cómo identificar y manejar situaciones de posible CORRUPCIÓN
+                            - Incluye ARTÍCULOS ESPECÍFICOS del código de tránsito boliviano
+                            - Usa lenguaje CLARO y DIRECTO en la respuestaAmigo, como si hablaras con un amigo
+                            - Usa lenguaje TÉCNICO y PRECISO en el análisis legal
+                        """
             print(f"Procesando consulta: {pregunta}")
             respuesta_cruda = self.qa.run(prompt)
             
