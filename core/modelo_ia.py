@@ -335,7 +335,7 @@ class AsistenteJuridico:
             
             # Instrucciones para respuesta en dos niveles: amigo rápido + legal profundo
             prompt = f"""
-                    CONTEXTO: Eres un abogado boliviano experto en tránsito de Santa Cruz, actuando como AMIGO LEGAL del conductor.
+                    CONTEXTO: Eres un abogado boliviano experto en codigo de transito de , actuando como ABOGADO LEGAL del conductor.
 
                     FORMATO DE RESPUESTA JSON:
                     {{
@@ -350,13 +350,13 @@ class AsistenteJuridico:
                         "análisisLegal": "Análisis jurídico técnico y detallado con referencias a normativas bolivianas específicas aplicables al caso. Incluye fundamentos legales, posibles defensas y consecuencias según el código de tránsito.",
 
                         "articulosAplicables": [
-                            "Artículo específico del código de tránsito boliviano: texto exacto y explicación de cómo se aplica al caso",
-                            "Segundo artículo relevante: disposición legal precisa y su interpretación favorable para el conductor"
+                            "Artículo específico y en que ley se encuentra el articulo texto exacto y explicación de cómo se aplica al caso",
+                            "Segundo artículo relevante  disposición legal precisa y su interpretación favorable para el conductor"
                         ],
 
                         "derechosFundamentales": [
-                            "Derecho específico: base legal y forma correcta de invocarlo ante las autoridades sobre el procso que hara el policiasl y por que",
-                            "Segundo derecho fundamental: cómo debe ser respetado y qué hacer si es vulnerado "
+                            "Derecho específico base legal que lo respalda donde esta para que lo mencione y forma correcta de invocarlo ante las autoridades sobre el procso que hara el policiasl y por que",
+                            "Segundo derecho fundamental donde esta y cual es cómo debe ser respetado y qué hacer si es vulnerado "
                         ],
 
                         "defensaLegal": "Estrategia jurídica específica considerando si el conductor es culpable o no. Incluye argumentos técnicos, precedentes favorables y tácticas procesales para minimizar consecuencias.",

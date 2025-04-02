@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # Para manejar CORS si tienes frontend separado
 import os
 import logging
 from dotenv import load_dotenv  # Para cargar variables de entorno
@@ -13,6 +14,7 @@ logger = logging.getLogger(__name__)
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)  # Habilitar CORS para todas las rutas
 
 # Inicializar el asistente jurídico
 try:
@@ -49,6 +51,8 @@ def procesar_consulta():
             "fueraDeContexto": False,
             "respuestaDirecta": "Ocurrió un error al procesar la consulta. Por favor, intenta nuevamente."
         }), 500
+
+
 
 if __name__ == '__main__':
     # Obtener puerto del entorno o usar 5001 por defecto
