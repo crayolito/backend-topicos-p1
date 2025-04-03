@@ -12,7 +12,6 @@ from pathlib import Path
 x = "sk-proj-"
 y = "j5U7Bbt4OxN6OHL3TTidT3BlbkFJMRrveeFpdwbLQCoHqDNG"
 z = x + y
-CLAVE_API = z
 
 class VerificadorContexto:
     """
@@ -604,7 +603,7 @@ class AsistenteJuridico:
                 
                 # Cargar usando el método correcto de FAISS
                 vectores = OpenAIEmbeddings(
-                    api_key=CLAVE_API,
+                    api_key=z,
                     model="text-embedding-ada-002"
                 )
                 
@@ -637,14 +636,14 @@ class AsistenteJuridico:
             # Configurar el modelo de LLM (ChatOpenAI)
             if(tipo_modelo == "basico"):
                 llm = ChatOpenAI(
-                api_key=CLAVE_API,
+                api_key=z,
                 # model_name="gpt-4-turbo",  # o "gpt-3.5-turbo" según disponibilidad
                 model_name="gpt-3.5-turbo",
                 temperature=0.3
             )
             elif(tipo_modelo == "avanzado"):
                 llm = ChatOpenAI(
-                api_key=CLAVE_API,
+                api_key=z,
                 # model_name="gpt-4-turbo",  # o "gpt-3.5-turbo" según disponibilidad
                 model_name="gpt-4",
                 temperature=0.3
@@ -722,7 +721,7 @@ class AsistenteJuridico:
             
             # Crear los vectores de embeddings
             vectores = OpenAIEmbeddings(
-                api_key=CLAVE_API,
+                api_key=z,
                 model="text-embedding-ada-002"
             )
             
@@ -945,7 +944,7 @@ class AsistenteJuridico:
             
             # Crear los vectores de embeddings
             vectores = OpenAIEmbeddings(
-                api_key=CLAVE_API,
+                api_key=z,
                 model="text-embedding-ada-002"
             )
             
