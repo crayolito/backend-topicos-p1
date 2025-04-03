@@ -20,6 +20,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+nimble-artwork-438818-k0-ade40f7834b6.json
 
 # Entornos virtuales
 venv/
