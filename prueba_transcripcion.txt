@@ -1,0 +1,1 @@
+buenos días, hoy empiezo a hacer pruebas y testeos con la grabación de que estoy haciendo en este momento tiene que ser traducido al español correctamente con la librería de Google Cloud
