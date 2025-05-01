@@ -6,6 +6,7 @@ import tempfile
 from dotenv import load_dotenv  # Para cargar variables de entorno
 from core import AsistenteJuridico  # Importamos la clase que has creado
 from core import GoogleSpeechToText  # Importar el nuevo servicio
+import json
 
 # Configuración de logging
 logging.basicConfig(level=logging.INFO, 
@@ -60,21 +61,23 @@ def procesar_consulta():
         pregunta = datos['pregunta']
         tipo_modelo = datos['tipo-modelo']
         historial_conversacion = datos.get('historial-conversacion', [])
-        logger.info(f"Consulta recibida: {pregunta}")
-        logger.info(f"Tipo de modelo: {tipo_modelo}")
-        logger.info(f"historial_conversacion: {historial_conversacion}")
         
-        # Generar respuesta (la verificación del contexto ya se hace dentro de este método)
-        respuesta = asistente.generar_respuesta(pregunta, tipo_modelo, historial_conversacion)
+        # Convertir historial a string de manera simple
+        historial_texto = json.dumps(historial_conversacion, ensure_ascii=False)
+        
+        # Debug: Imprimir el historial procesado
+        # print(f"Historial procesado: {historial_texto}")
+        
+        # Llamar al asistente con el historial procesado
+        respuesta = asistente.generar_respuesta(pregunta, tipo_modelo, historial_texto)
+        
         return jsonify(respuesta)
-    
+        
     except Exception as e:
-        logger.error(f"Error al procesar la consulta: {e}")
-        return jsonify({
-            "fueraDeContexto": False,
-            "respuestaDirecta": "Ocurrió un error al procesar la consulta. Por favor, intenta nuevamente."
-        }), 500
-
+        print(f"Error en /api/consulta: {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({"error": f"Error al procesar la consulta: {str(e)}"}), 500
 @app.route('/api/audio', methods=['POST'])
 def procesar_audio():
     """

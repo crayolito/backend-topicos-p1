@@ -1,3 +1,8 @@
+./ngrok.exe http 5001
+ngrok config add-authtoken 2ZDrRh2glebxv8E2c0bdL0EScjJ_6KcM1G8QhcfCyFvnyNSYg
+ngrok config add-authtoken 2ZDrRh2glebxv8E2c0bdL0EScjJ_6KcM1G8QhcfCyFvnyNSYg
+
+
 # Asistente Jurídico API
 
 ## Pasos básicos para ejecutar
