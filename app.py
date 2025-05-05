@@ -6,6 +6,7 @@ import tempfile
 from dotenv import load_dotenv  # Para cargar variables de entorno
 from core import AsistenteJuridico  # Importamos la clase que has creado
 from core import GoogleSpeechToText  # Importar el nuevo servicio
+from core import BaseConocimientoMobil  # Importar la clase de base de conocimiento
 import json
 
 # Configuración de logging
@@ -78,6 +79,8 @@ def procesar_consulta():
         import traceback
         traceback.print_exc()
         return jsonify({"error": f"Error al procesar la consulta: {str(e)}"}), 500
+
+
 @app.route('/api/audio', methods=['POST'])
 def procesar_audio():
     """
@@ -137,6 +140,27 @@ def procesar_audio():
         return jsonify({
             "error": str(e)
         }), 500
+
+@app.route('/api/base_conocimiento', methods=['GET'])
+def obtener_base_conocimiento():
+    """
+    Endpoint para obtener la base de conocimiento
+    """
+    if asistente is None:
+        return jsonify({"error": "El asistente jurídico no se ha inicializado correctamente"}), 500
+    
+    try:
+        # Obtener la base de conocimiento
+        base_conocimiento = BaseConocimientoMobil()
+        fragmentos = base_conocimiento.obtener_todos_fragmentos()
+        
+        # Devolver los fragmentos en formato JSON
+        return jsonify(fragmentos)
+        
+    except Exception as e:
+        logger.error(f"Error al obtener la base de conocimiento: {e}")
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     # Obtener puerto del entorno o usar 5001 por defecto
     port = int(os.environ.get('PORT', 5001))

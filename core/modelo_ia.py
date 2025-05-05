@@ -1875,28 +1875,29 @@ class AsistenteJuridico:
 
             ### FORMATO DE RESPUESTA JSON:
             {{
-            "diferencias": "SOLO incluir en la primera interacción. SIEMPRE listar ENTRE 3-4 situaciones legales diferentes con sus palabras clave diferenciadoras en MAYÚSCULAS. NUNCA MENOS DE 3. Cada situación debe incluir artículo, sección y numeral específico. Ejemplo: 'Artículo 380, Sección II, Numeral 3: aplica cuando NO PORTAS FÍSICAMENTE la licencia pero la tienes vigente. Artículo 381, Sección II, Numeral 4: aplica cuando NO TIENES LICENCIA VÁLIDA (nunca obtenida o vencida). Artículo 382, Sección II, Numeral 5: aplica cuando tu licencia está RETENIDA por otra infracción.' Las diferencias deben ser MUY CLARAS para que el usuario identifique exactamente cuál se aplica a su caso.",
+            "diferencias": "SOLO incluir en la primera interacción. SIEMPRE listar ENTRE 3-4 situaciones legales diferentes con sus palabras clave diferenciadoras en MAYÚSCULAS. NUNCA MENOS DE 3. Cada situación debe incluir artículo, sección y numeral específico. Ejemplo: '1. Artículo 380, Sección II, Numeral 3: aplica cuando NO PORTAS FÍSICAMENTE la licencia pero la tienes vigente. 2. Artículo 381, Sección II, Numeral 4: aplica cuando NO TIENES LICENCIA VÁLIDA (nunca obtenida o vencida). 3. Artículo 382, Sección II, Numeral 5: aplica cuando tu licencia está RETENIDA por otra infracción.' Las diferencias deben ser MUY CLARAS para que el usuario identifique exactamente cuál se aplica a su caso.",
 
-            "respuesta": "Con tono de confianza y seguridad, mostrando que estamos ayudándole. EXPLICAR DETALLADAMENTE CADA SITUACIÓN mencionada en 'diferencias' de manera NATURAL y FLUIDA, usando MÚLTIPLES PÁRRAFOS CON SALTOS DE LÍNEA para mejorar la legibilidad.\\n\\nSIEMPRE usar SALTOS DE LÍNEA DOBLES (\\n\\n) entre párrafos distintos y SALTOS DE LÍNEA SIMPLES (\\n) entre ideas relacionadas dentro del mismo párrafo.\\n\\nPara cada artículo, incluir en el flujo natural de la conversación:\\n
-            - La explicación completa del artículo y cuándo aplica exactamente\\n
-            - SIEMPRE ser preciso al mencionar los artículos: incluir sección, subsección, inciso o numeral específico donde se encuentra\\n
-            - SIEMPRE especificar el monto EXACTO de cada multa o sanción en Bolivianos (Bs.) con el valor numérico y escrito (ejemplo: 'multa de CINCUENTA BOLIVIANOS (Bs. 50)')\\n
-            - SIEMPRE aclarar la categoría de la sanción (grave, leve, etc.)\\n
-            - SIEMPRE indicar si amerita retención de vehículo/licencia y por CUÁNTOS DÍAS exactamente\\n
-            - El procedimiento correcto que debe seguir el oficial de tránsito paso a paso\\n
-            - Consejos prácticos y específicos para el conductor en esa situación\\n
-            - SIEMPRE detallar las CONSECUENCIAS PRÁCTICAS para el conductor: cuánto deberá pagar, dónde, en qué plazo, qué documentos necesitará para recuperar su vehículo/licencia, y si hay opciones de apelación\\n
-            - Recomendaciones sobre cómo actuar ante intentos de soborno, con frases exactas para usar\\n
-            - Sugerencias para documentar correctamente la situación\\n
-            - Mencionar instituciones específicas donde reclamar o denunciar si es necesario\\n\\n
+            "respuesta": "EVALUAR la situación para determinar si el cliente está actuando correctamente o incorriendo en una infracción, y si el rol debe ser de consultor informativo o de defensor ante posible abuso. Usar tono natural que inspire confianza y seguridad. EXPLICAR DETALLADAMENTE CADA SITUACIÓN mencionada en 'diferencias' de manera NATURAL y FLUIDA, usando MÚLTIPLES PÁRRAFOS CON SALTOS DE LÍNEA para mejorar la legibilidad.
 
-            INICIAR UN NUEVO PÁRRAFO al cambiar de tema o de artículo legal.\\n\\n
+            Para cada artículo, incluir en el flujo natural de la conversación:
+            - La explicación completa del artículo y cuándo aplica exactamente
+            - SIEMPRE ser preciso al mencionar los artículos: incluir sección, subsección, inciso o numeral específico donde se encuentra
+            - SIEMPRE especificar el monto EXACTO de cada multa o sanción en Bolivianos (Bs.) con el valor numérico y escrito (ejemplo: 'multa de CINCUENTA BOLIVIANOS (Bs. 50)')
+            - SIEMPRE aclarar la categoría de la sanción (grave, leve, etc.)
+            - SIEMPRE indicar si amerita retención de vehículo/licencia y por CUÁNTOS DÍAS exactamente
+            - El procedimiento correcto que debe seguir el oficial de tránsito paso a paso
+            - Consejos prácticos y específicos para el conductor en esa situación
+            - SIEMPRE detallar las CONSECUENCIAS PRÁCTICAS para el conductor: cuánto deberá pagar, dónde, en qué plazo, qué documentos necesitará para recuperar su vehículo/licencia, y si hay opciones de apelación
+            - Recomendaciones sobre cómo actuar ante intentos de soborno, con frases exactas para usar
+            - Sugerencias para documentar correctamente la situación
+            - Mencionar instituciones específicas donde reclamar o denunciar si es necesario
 
-            USAR SUBTÍTULOS O TITULARES en mayúsculas seguidos de dos puntos para separar claramente los distintos artículos o secciones relevantes.\\n\\n
+            INICIAR UN NUEVO PÁRRAFO al cambiar de tema o de artículo legal.
+
+            USAR TÍTULOS para separar claramente los distintos artículos o secciones relevantes, no solo para leyes sino también para cada uno de los mínimo 3 puntos requeridos.
 
             Todo el texto debe fluir como si fuera una conversación real con un amigo que es abogado, evitando el formato de lista de viñetas o numeración. USAR LENGUAJE SENCILLO Y DIRECTO."
             }}
-
 
             ### DATOS ACTUALES:
             HISTORIAL DE CONVERSACIÓN: {historial_conversacion}
